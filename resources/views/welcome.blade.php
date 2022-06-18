@@ -40,5 +40,23 @@
         @else
             <p>O nome não é Paulo</p>
         @endif
+
+        @for($i = 0; $i < count($array); $i++)
+            <p>{{ $array[$i] }} - {{ $i }}</p>
+            @if ($i == 2)
+             <p>O i é 2</p>
+            @endif
+        @endfor
+
+        @foreach ($nomes as $nome )
+            <P>{{$loop->index}}</P>
+            <p>{{ $nome }}</p>
+        @endforeach
+
+        {{-- Posso rodar codigo php puro no blade --}}
+        @php
+            $name = "Mesaque";
+            echo $name;
+        @endphp
     </body>
 </html>
