@@ -1,27 +1,20 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/css/style.css">
-        <script src="/js/script.js"></script>
+@extends('layouts.main')
 
-        <title>Laravel</title>
-        <img src="/img/banner.jpg" alt="banner">
+@section('title', 'HDC Events')
 
-    </head>
-    <body>
+@section('content')
+
         <h2>Hello World</h2>
-
+        <img src="/img/banner.jpg" alt="banner">
         {{-- Vendo como funciona @if e @else --}}
-        {{-- @if (10 > 11)
+        @if (10 > 11)
             <p>A condição é true</p>
         @else
             <p>a condição é falsa</p>
-        @endif --}}
+        @endif
 
         {{-- trabalhando com dados dinamicos --}}
-        {{-- <p>{{  $nome }}</p>
+        <p>{{  $nome }}</p>
 
         @if($nome == "Paulo")
             <p>O nome é Pedro</p>
@@ -43,10 +36,9 @@
             <p>{{ $nome }}</p>
         @endforeach --}}
 
-        {{-- Posso rodar codigo php puro no blade --}}
-        {{-- @php
+         {{-- Posso rodar codigo php puro no blade  --}}
+         @php
             $name = "Mesaque";
             echo $name;
-        @endphp --}}
-    </body>
-</html>
+        @endphp
+@endsection
