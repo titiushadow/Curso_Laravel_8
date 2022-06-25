@@ -22,13 +22,5 @@ Route::get('/contato', function() {
     return view('contato');
 });
 
-Route::get('/produtos', function() {
 
-    $busca = request('search');
 
-    return view ('produtos', ['busca' => $busca]);
-});
-
-Route::get('/produtos_test/{id?}', function ($id = null){
-    return view('product', ['id' => $id]);
-});
